@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Array Methods Example</h1>
+
+    <button id="pushBtn">Push Example</button>
+    <button id="popBtn">Pop Example</button>
+    <button id="shiftBtn">Shift Example</button>
+    <button id="unshiftBtn">Unshift Example</button>
+    <button id="mapBtn">Map Example</button>
+    <button id="filterBtn">Filter Example</button>
+    <button id="reduceBtn">Reduce Example</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        // Initial array
+        let numbers = [1, 2, 3, 4, 5];
+
+        // Display result function
+        function displayResult(message) {
+            document.getElementById("result").textContent = message;
+        }
+
+        // Array method examples
+        document.getElementById("pushBtn").addEventListener("click", () => {
+            numbers.push(6);
+            displayResult(`After push: ${numbers}`);
+        });
+
+        document.getElementById("popBtn").addEventListener("click", () => {
+            numbers.pop();
+            displayResult(`After pop: ${numbers}`);
+        });
+
+        document.getElementById("shiftBtn").addEventListener("click", () => {
+            numbers.shift();
+            displayResult(`After shift: ${numbers}`);
+        });
+
+        document.getElementById("unshiftBtn").addEventListener("click", () => {
+            numbers.unshift(0);
+            displayResult(`After unshift: ${numbers}`);
+        });
+
+        document.getElementById("mapBtn").addEventListener("click", () => {
+            let mappedNumbers = numbers.map(num => num * 2);
+            displayResult(`After map (multiply by 2): ${mappedNumbers}`);
+        });
+
+        document.getElementById("filterBtn").addEventListener("click", () => {
+            let filteredNumbers = numbers.filter(num => num % 2 === 0);
+            displayResult(`After filter (even numbers): ${filteredNumbers}`);
+        });
+
+        document.getElementById("reduceBtn").addEventListener("click", () => {
+            let sum = numbers.reduce((total, num) => total + num, 0);
+            displayResult(`After reduce (sum): ${sum}`);
+        });
+    </script>
+</body>
+</html>

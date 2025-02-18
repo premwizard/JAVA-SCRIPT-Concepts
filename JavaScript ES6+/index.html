@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ES6+ Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript ES6+ Features Example</h1>
+
+    <button id="greetBtn">Greet Me</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Arrow Function
+        const greet = (name = "Guest") => `Hello, ${name}!`;
+
+        // Destructuring Example (Object)
+        const user = { firstName: "John", lastName: "Doe" };
+        const { firstName, lastName } = user;
+
+        // Template Literal (String Interpolation)
+        const greetingMessage = `Hello, ${firstName} ${lastName}!`;
+
+        // Default Parameters
+        const greetWithDefault = (name = "Guest") => `Welcome, ${name}!`;
+
+        // Handling Button Click Event
+        document.getElementById("greetBtn").addEventListener("click", () => {
+            const resultDiv = document.getElementById("result");
+            
+            // Use ES6 features
+            resultDiv.innerHTML = `
+                <p>${greetingMessage}</p>
+                <p>${greetWithDefault("Alice")}</p>
+                <p>${greetWithDefault()}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

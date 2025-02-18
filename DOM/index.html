@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="title">Hello, World!</h1>
+  <button id="changeText">Change Text</button>
+  <script>
+    const button = document.getElementById("changeText");
+    const title = document.getElementById("title");
+
+    button.addEventListener("click", () => {
+      title.textContent = "Text Changed!";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures and Scope Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Closures and Scope Example</h1>
+
+    <button id="showClosure">Show Closure Result</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Global Scope
+        let globalVariable = "I am a global variable!";
+
+        // Outer Function
+        function outerFunction() {
+            // Local Scope
+            let outerVariable = "I am an outer variable!";
+            
+            // Inner Function (Closure)
+            function innerFunction() {
+                // Accessing variables from both local and global scope
+                return `${outerVariable} And ${globalVariable}`;
+            }
+            
+            return innerFunction;
+        }
+ 
+        // Event Listener
+        document.getElementById("showClosure").addEventListener("click", () => {
+            const closure = outerFunction(); // outerFunction returns innerFunction (Closure)
+            document.getElementById("result").textContent = closure(); // Invokes innerFunction and shows the result
+        });
+    </script>
+</body>
+</html>

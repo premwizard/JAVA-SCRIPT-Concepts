@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object-Oriented Programming Example</h1>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Class definition
+        class Person {
+            // Constructor to initialize properties
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Method to display person details
+            displayInfo() {
+                return `${this.name} is ${this.age} years old.`;
+            }
+
+            // Method to celebrate a birthday (increase age)
+            celebrateBirthday() {
+                this.age += 1;
+            }
+        }
+
+        // Creating an object (instance) of the Person class
+        let person1 = new Person("John", 30);
+        let person2 = new Person("Jane", 25);
+
+        // Displaying initial details
+        let resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `
+            <p>${person1.displayInfo()}</p>
+            <p>${person2.displayInfo()}</p>
+        `;
+
+        // Celebrate a birthday for person1
+        person1.celebrateBirthday();
+        
+        // Display updated details
+        resultDiv.innerHTML += `
+            <p>After birthday:</p>
+            <p>${person1.displayInfo()}</p>
+            <p>${person2.displayInfo()}</p>
+        `;
+    </script>
+</body>
+</html>
